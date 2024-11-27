@@ -96,7 +96,7 @@ const stopGame = (status) => {
   document.getElementById(
     "game"
   ).innerHTML += `<p>The word was: <span class="result-word">${word}</span></p><button id="play-again" class="button-primary px-5 py-2 mt-5">Play again</button>`;
-  document.getElementById("play-again").onclick = startGame;
+  document.getElementById("play-again").onclick = returnToHomeScreen;
 };
 
 export const startGame = () => {
@@ -135,3 +135,8 @@ export const startGame = () => {
     }
   };
 };
+
+const returnToHomeScreen = () => {
+  gameDiv.innerHTML = '<button id="startGame" class="button-primary">Start game</button>';
+  document.getElementById('startGame').addEventListener('click', startGame);
+}
